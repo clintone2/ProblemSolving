@@ -1,0 +1,18 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+#generate two random numbers between 0 and 10
+bracelet = [1,5] #np.random.randint(11, size=(2))
+print(bracelet)
+
+n = 1
+loop = False
+while loop == False:
+    newLink = (bracelet[n-1] + bracelet[n])%10 
+    newBracelet = np.append(bracelet, newLink)
+    bracelet = newBracelet
+    n  = n + 1
+    if bracelet[0] == bracelet[n-1] and bracelet[1] == bracelet[n]:
+        loop = True
+print(n+1)
+print(bracelet)
